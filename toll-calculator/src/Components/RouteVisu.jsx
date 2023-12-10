@@ -1,58 +1,97 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import { GoogleMap, LoadScript, DirectionsRenderer } from '@react-google-maps/api';
+import { Container, Form, Button } from 'react-bootstrap';
+import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
 
 const RouteVisu = () => {
+  const [origin, setOrigin] = useState('');
+  const [destination, setDestination] = useState('');
   const [directions, setDirections] = useState(null);
 
-  // Function to handle directions response
-  const directionsCallback = (response) => {
-    if (response !== null && response.status === 'OK') {
-      setDirections(response);
-    } else {
-      console.error('Error fetching directions:', response);
-    }
+  const handleCalculateRoute = () => {
+    const directionsService = new window.google.maps.DirectionsService();
+
+    directionsService.route(
+      {
+        origin,
+        destination,
+        travelMode: window.google.maps.TravelMode.DRIVING,
+      },
+      (result, status) => {
+        if (status === window.google.maps.DirectionsStatus.OK) {
+          setDirections(result);
+        } else {
+          console.error('Error fetching directions:', result);
+        }
+      }
+    );
   };
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        overflow: 'hidden',
-        width: '100vw',
-        height: '100vh',
-      }}
-    >
-      <div
-        className="video-background"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          overflow: 'hidden',
-          zIndex: -1,
-        }}
-      >
-        {/* Your existing video background code here */}
-      </div>
+    // <div
+    //   style={{
+    //     position: 'relative',
+    //     overflow: 'hidden',
+    //     width: '100vw',
+    //     height: '100vh',
+    //   }}
+    // >
+    //   <video
+    //     autoPlay
+    //     muted
+    //     loop
+    //     playsInline
+    //     poster={process.env.PUBLIC_URL + '/video-thumbnail.jpg'}
+    //     style={{
+    //       width: '100%',
+    //       height: '100%',
+    //       objectFit: 'cover',
+    //     }}
+    //   >
+    //     <source
+    //       src={process.env.PUBLIC_URL + '/Assets/bg.mp4'}
+    //       type="video/mp4"
+    //     />
+    //     Your browser does not support the video tag.
+    //  </video>
 
       <Container style={{ marginTop: '100px', marginBottom: '285px', position: 'relative', zIndex: 1 }}>
-        {/* Google Maps LoadScript */}
-        <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-          {/* GoogleMap component */}
+        <Form>
+          <Form.Group controlId="formOrigin">
+            <Form.Label>Origin</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter origin"
+              value={origin}
+              onChange={(e) => setOrigin(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formDestination">
+            <Form.Label>Destination</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter destination"
+              value={destination}
+              onChange={(e) => setDestination(e.target.value)}
+            />
+          </Form.Group>
+
+          <Button variant="primary" onClick={handleCalculateRoute}>
+            Calculate Route
+          </Button>
+        </Form>
+
+        <LoadScript googleMapsApiKey="AIzaSyAHDGBteXpbAZU97q19-XXqMVRiNx9HWEM">
           <GoogleMap
             mapContainerStyle={{ width: '100%', height: '100%' }}
-            center={{ lat: 40.7128, lng: -74.0060 }}  // Set the initial center of the map
-            zoom={10}  // Set the initial zoom level
+            center={{ lat: 40.7128, lng: -74.0060 }}
+            zoom={10}
           >
-            {/* DirectionsRenderer component */}
             {directions && <DirectionsRenderer directions={directions} />}
           </GoogleMap>
         </LoadScript>
       </Container>
-    </div>
+   // </div>
   );
 };
 

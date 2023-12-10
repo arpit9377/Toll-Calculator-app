@@ -97,7 +97,7 @@ const LandingPage = () => {
                   <Card.Body>
                     <Card.Title style={{ color: "#B6BBC4" }}>Toll Calculation</Card.Title>
                     <Card.Text style={{ color: "#B6BBC4" }}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -111,7 +111,7 @@ const LandingPage = () => {
                   <Card.Body>
                     <Card.Title style={{ color: "#B6BBC4" }}>Route Visualization</Card.Title>
                     <Card.Text style={{ color: "#B6BBC4" }}>
-                      Route Visualization kasndfamsp;fmponfak sclCLSNvikasd
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -125,7 +125,7 @@ const LandingPage = () => {
                   <Card.Body>
                     <Card.Title style={{ color: "#B6BBC4" }}>How it Works</Card.Title>
                     <Card.Text style={{ color: "#B6BBC4" }}>
-                      Workkkkkkk !!
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Card.Text>
                   </Card.Body>
                 </Card>
