@@ -8,6 +8,7 @@ import PolylineDecoding from './Components/PolylineDecoding';
 import TollDetails from './Components/TollDetails';
 import About from './Components/About';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/TollDetails" element={<TollDetails />} />
         <Route path="/About" element={<About />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 };

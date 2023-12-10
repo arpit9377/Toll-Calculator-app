@@ -8,16 +8,19 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
+
+
 // Styles for the card images
 const cardImageStyle = {
   width: "100%",
-  height: "150px", // Adjust the height as needed
+  height: "500px", // Adjust the height as needed
   objectFit: "cover",
 };
 
 const LandingPage = () => {
   return (
     <>
+
       {/* Hero Section */}
       <section
         className="hero-section"
@@ -65,7 +68,7 @@ const LandingPage = () => {
           style={{
             position: "relative",
             zIndex: 1,
-            color: "white",
+            color: "#B6BBC4",
             padding: "15% 5%",
           }}
         >
@@ -76,24 +79,24 @@ const LandingPage = () => {
             Travel on the cheapest or the fastest routes to your destination.
           </p>
           <Link to="/TollDetails">
-            <Button variant="primary">Calculate Now!</Button>
+            <Button variant="primary" style={{ backgroundColor: "#31304D", border: "none" }}>Calculate Now!</Button>
           </Link>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="features-section">
+      <section className="features-section" style={{ backgroundColor: "#161A30", padding: "20px 0" }}>
         <Container>
-          <h2 className="text-center mb-5">Features</h2>
+          <h2 className="text-center mb-5" style={{ color: "#B6BBC4" }}>Features</h2>
           <Row>
             {/* Feature Card 1 */}
-            <Col md={6} lg={3}>
-              <Link to="/TollCalculation">
-                <Card className="feature-card" style={{ cursor: "pointer" }}>
+            <Col md={6} lg={4} xl={4}>
+              <Link to="/TollDetails" className="text-decoration-none">
+                <Card className="feature-card" style={{ cursor: "pointer", marginBottom: "20px" }}>
                   <Image src="/Assets/card-1.jpg" alt="Card 1" style={cardImageStyle} />
                   <Card.Body>
-                    <Card.Title>Toll Calculation</Card.Title>
-                    <Card.Text>
+                    <Card.Title style={{ color: "#B6BBC4" }}>Toll Calculation</Card.Title>
+                    <Card.Text style={{ color: "#B6BBC4" }}>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     </Card.Text>
                   </Card.Body>
@@ -101,13 +104,13 @@ const LandingPage = () => {
               </Link>
             </Col>
             {/* Feature Card 2 */}
-            <Col md={6} lg={3}>
-              <Link to="/RouteVisualization">
-                <Card className="feature-card" style={{ cursor: "pointer" }}>
+            <Col md={6} lg={4} xl={4}>
+              <Link to="/RouteVisu" className="text-decoration-none">
+                <Card className="feature-card" style={{ cursor: "pointer", marginBottom: "20px" }}>
                   <Image src="/Assets/card-2.jpg" alt="Card 2" style={cardImageStyle} />
                   <Card.Body>
-                    <Card.Title>Route Visualization</Card.Title>
-                    <Card.Text>
+                    <Card.Title style={{ color: "#B6BBC4" }}>Route Visualization</Card.Title>
+                    <Card.Text style={{ color: "#B6BBC4" }}>
                       Route Visualization kasndfamsp;fmponfak sclCLSNvikasd
                     </Card.Text>
                   </Card.Body>
@@ -115,25 +118,15 @@ const LandingPage = () => {
               </Link>
             </Col>
             {/* Feature Card 3 */}
-            <Col md={6} lg={3}>
-              <Link to="/PolylineDecoding">
-                <Card className="feature-card" style={{ cursor: "pointer" }}>
-                  <Image src="/Assets/card-3.jpg" alt="Card 3" style={cardImageStyle} />
+            <Col md={6} lg={4} xl={4}>
+              <Link to="/UserEdu" className="text-decoration-none">
+                <Card className="feature-card" style={{ cursor: "pointer", marginBottom: "20px" }}>
+                  <Image src="/Assets/card-3.jpg" alt="Card 4" style={cardImageStyle} />
                   <Card.Body>
-                    <Card.Title>Polyline Decoding</Card.Title>
-                    <Card.Text>Polyline Decoding nckaslckals c,zc</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Link>
-            </Col>
-            {/* Feature Card 4 */}
-            <Col md={6} lg={3}>
-              <Link to="/HowItWorks">
-                <Card className="feature-card" style={{ cursor: "pointer" }}>
-                  <Image src="/Assets/card-4.jpg" alt="Card 4" style={cardImageStyle} />
-                  <Card.Body>
-                    <Card.Title>How it Works</Card.Title>
-                    <Card.Text>Workkkkkkk !!</Card.Text>
+                    <Card.Title style={{ color: "#B6BBC4" }}>How it Works</Card.Title>
+                    <Card.Text style={{ color: "#B6BBC4" }}>
+                      Workkkkkkk !!
+                    </Card.Text>
                   </Card.Body>
                 </Card>
               </Link>
@@ -143,19 +136,24 @@ const LandingPage = () => {
       </section>
 
       {/* About Section */}
-      <section className="about-section">
+      <section className="about-section" style={{ backgroundColor: "#31304D", padding: "10px " }}>
         <Container>
-          <h2 className="text-center mb-5">About Us</h2>
+          <h2 className="text-center mb-5" style={{ color: "#B6BBC4" }}>About Us</h2>
           <Row>
             <Col>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p style={{ color: "#B6BBC4" }}>
+              Looking to calculate toll costs between cities across Jamaica? Use the Jamaica Toll Calculator App! See trip cost breakdown
+               - tolls, fuel and other applicable charges, toll plazas, discounts, etc. Travel on the cheapest or the fastest routes to your 
+               destination. For all vehicles - car, truck (2 axle to 9 axle), EV, RV, bus, motorcycle - across all Latin American and North 
+               American countries. Business? Integrate Toll API for pre-trip, on-trip and post-trip toll and route information.
+             Still not convinced? Just enter your origin, destination, and Submit to see tolls in seconds. 
+             Fill the optional fields - mileage, toll tags etc. - to get more accurate results.
               </p>
             </Col>
           </Row>
         </Container>
       </section>
+      
     </>
   );
 };

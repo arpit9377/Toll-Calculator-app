@@ -15,7 +15,7 @@ export const Header = () => {
             <NavDropdown title="Features" id="basic-nav-dropdown">
               <NavDropdown.Item href="/UserEdu">How Tolling Works</NavDropdown.Item>
               <NavDropdown.Item href="/RouteVisu">Route Visualization</NavDropdown.Item>
-              <NavDropdown.Item href="/TollDetails">Toll Details</NavDropdown.Item>
+              <NavDropdown.Item href="/TollDetails">Toll Calculation</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/About">About</Nav.Link>
           </Nav>
