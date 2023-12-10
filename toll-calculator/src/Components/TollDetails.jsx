@@ -73,9 +73,47 @@ const TollDetails = () => {
   };
 
   return (
-    
-  
-    <Container style={{ marginTop: '100px', marginBottom:'285px' }}>
+    <div
+    style={{
+        position: 'relative',
+        overflow: 'hidden', 
+        width: '100vw',     
+        height: '100vh',    
+      }}
+  >
+    <div
+    className="video-background"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      overflow: 'hidden',
+      zIndex: -1,
+    }}
+  >
+    <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    poster={process.env.PUBLIC_URL + '/video-thumbnail.jpg'}
+    style={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    }}
+  >
+    {/* Update the src attribute with your video file */}
+    <source
+      src={process.env.PUBLIC_URL + '/Assets/bg.mp4'}
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+  </div>
+    <Container style={{ marginTop: '200px', marginBottom: '285px', position: 'relative', zIndex: 1 }}>
       <Card style={{ backgroundColor: '#31304D', color: '#B6BBC4' }}>
         <Card.Body>
           <Form>
@@ -112,7 +150,7 @@ const TollDetails = () => {
         </Card.Body>
       </Card>
     </Container>
-    
+    </div>
   );
 };
 
