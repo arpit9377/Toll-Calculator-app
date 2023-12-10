@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './Components/LandingPage';
 import UserEdu from './Components/UserEdu';
 import RouteVisu from './Components/RouteVisu';
-import PolylineDecoding from './Components/PolylineDecoding';
 import TollDetails from './Components/TollDetails';
 import About from './Components/About';
 import Header from './Components/Header';
@@ -18,7 +17,6 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/UserEdu" element={<UserEdu />} />
         <Route path="/RouteVisu" element={<RouteVisu />} />
-        <Route path="/PolylineDecoding" element={<PolylineDecoding />} />
         <Route path="/TollDetails" element={<TollDetails />} />
         <Route path="/About" element={<About />} />
       </Routes>
